@@ -1,0 +1,610 @@
+#include<conio.h>
+#include<graphics.h>
+void start(int);
+int color(int);
+int main()
+{
+int gd=EGA,gm=EGAHI,q=4;
+int z=0,h=0,count1=0,a=12,b=12,c=12,f1=0,f2=0,f3=0;
+char ch,ca;
+initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+for(z=0;z<=10000;z++)
+{
+cleardevice();
+setcolor(BLUE);
+outtextxy(80,270,"press 'y' to select");
+outtextxy(80,290,"press down to move");
+   if(kbhit())
+   {
+    ch=getch();
+   if(ch=='s'|| ch==0x50)
+    {
+      count1++;
+      if(count1==1)
+      {
+       a=2;
+       b=12;
+       c=12;
+       f1=1;
+       f2=0;
+       f3=0;
+      }
+      else if(count1==2){
+      b=2;
+      a=12;
+      c=12;
+      f2=1;
+      f1=0;
+      f3=0;
+      }
+      else if(count1==3)
+      {
+       c=2;
+       a=12;
+       b=12;
+       f3=1;
+       f1=0;
+       f2=0;
+      }
+      else if(count1==4)
+      {
+       count1=0;
+       a=2;
+       b=12;
+       c=12;
+       f1=1;
+       f2=0;
+       f3=0;
+      }
+    }
+    if(ch=='q')
+    {
+     exit(0);
+    }
+    if(ch=='y')
+    {
+     if(f1==1)
+     {
+     f2=0;
+     f3=0;
+     start(q);
+     }
+     if(f2==1)
+     {
+      f1=0;
+      f3=0;
+      q=color(q);
+     }
+     if(f3==1)
+     {
+      f1=0;
+      f2=0;
+      exit(0);
+     }
+    }
+   }
+sound('s'*h);
+setcolor(BLUE);
+setbkcolor(YELLOW);
+setfillstyle(1,9);
+settextstyle(10,0,5);
+outtextxy(50,20,"CAR DRIVING");
+line(50+z,200,260+z,200);
+line(100+z,200,120+z,170);
+line(120+z,170,190+z,170);
+line(190+z,170,210+z,200);
+line(135+z,170,135+z,200);
+line(175+z,170,175+z,200);
+line(50+z,200,50+z,230);
+line(260+z,200,260+z,230);
+line(50+z,230,100+z,230);
+circle(115+z,230,15);
+line(130+z,230,180+z,230);
+circle(195+z,230,15);
+line(260+z,230,210+z,230);
+circle(146+z,195,5);
+floodfill(51+z,201,BLUE);
+floodfill(105+z,199,BLUE);
+floodfill(145+z,199,BLUE);
+floodfill(195+z,199,BLUE);
+setfillstyle(1,WHITE);
+floodfill(146+z,195,BLUE);
+setfillstyle(1,8);
+floodfill(115+z,230,BLUE);
+floodfill(195+z,230,BLUE);
+settextstyle(2,0,6);
+rectangle(400,130,550,280);  //starts
+rectangle(430,150,520,180);
+setfillstyle(1,a);
+floodfill(431,151,BLUE);
+outtextxy(449,152,"START");
+rectangle(430,190,520,220);
+setfillstyle(1,b);
+floodfill(431,191,BLUE);
+outtextxy(435,192,"CARCOLOR");
+rectangle(430,230,520,260);
+setfillstyle(1,c);
+floodfill(431,231,BLUE);
+outtextxy(455,232,"QUIT");
+delay(100);
+h++;
+if(h==25)
+{
+ h=0;
+}
+nosound();
+}
+getch();
+closegraph();
+return 0;
+}
+void start(int q)
+{
+ int random=1,m=190;
+ int i=0,j=0,c=190,d=220,e=280,f=310,k,l,x=0,u=1;
+ int  a1=340, a2=470, a3=350,a4=460,a5=340,a6=360,a7=360,a8=450,a9=450,a10=470,a11=360,a13=450,a15=405,a17=360,a18=370,a19=370,a20=440,a21=440,a22=450,a23=385,a24=425,a25=385,a26=395,a27=395,a28=415,a29=415,a30=425,a31=336,a32=336,a33=360,a34=360,a35=348,a37=339,a39=474,a40=474,a41=450,a42=450,a43=462,a45=471;
+ int page=0;
+ int b1=340,b2=100,b3=380,b4=120,b5=250,b6=290;
+ int a[]={0,130,240,130,0,400,0,130};
+ int b[]={400,130,639,130,639,400,400,130};
+ char ch;
+ char s[20],z[20];
+ clrscr();
+ cleardevice();
+ setcolor(RED);
+ settextstyle(3,0,3);
+ outtextxy(250,100,z);
+ setcolor(GREEN);
+ setbkcolor(LIGHTBLUE);
+ for(i=0;i<500;i++){
+ sound(10+i);
+ delay(10);
+ nosound();
+ cleardevice();
+ setcolor(BLUE);
+ outtextxy(350,130,z);
+ setfillstyle(1,BLUE);
+ outtextxy(245,130,"Loading..");
+ sprintf(z,"%d%",u);
+ setcolor(GREEN);
+ bar(30,180,90+i,200);
+ x++;
+ if(x==5)
+ {
+  x=0;
+  u++;
+ }
+ }
+ delay(100);
+ cleardevice();
+ setbkcolor(GREEN);
+ setcolor(WHITE);
+ settextstyle(4,0,15);
+ sound(1000);
+ outtextxy(300,100,"3");
+ delay(500);
+ nosound();
+ delay(500);
+ cleardevice();
+ setbkcolor(GREEN);
+ setcolor(WHITE);
+ settextstyle(4,0,15);
+ sound(1000);
+ outtextxy(300,100,"2");
+ delay(500);
+ nosound();
+ delay(500);
+ cleardevice();
+ setbkcolor(GREEN);
+ setcolor(WHITE);
+ settextstyle(4,0,15);
+ sound(1000);
+ outtextxy(300,100,"1");
+ delay(500);
+ nosound();
+ delay(500);
+ cleardevice();
+ setbkcolor(GREEN);
+ setcolor(WHITE);
+ settextstyle(3,0,15);
+ sound(4000);
+ outtextxy(260,100,"GO");
+ delay(500);
+ nosound();
+ delay(500);
+ cleardevice();
+ setbkcolor(BLACK);
+ for(i=0;i<1000;i++)
+ {
+ sound('a'+j);
+ j++;
+ delay(30);
+ setactivepage(page);
+ setvisualpage(1-page);
+  cleardevice();
+ delay(100);
+ setfillstyle(1,9);
+ bar(0,0,639,130);
+ setfillstyle(1,8);
+ bar(0,130,700,600);
+ setcolor(8);
+ line(0,400,240,130);
+ line(400,130,640,400);
+ setcolor(8);
+ line(0,130,240,160);
+ line(0,130,0,400);
+ line(400,130,639,130);
+ line(639,130,639,400);
+ setfillstyle(1,GREEN);
+ fillpoly(4,a);
+ fillpoly(4,b);
+ setfillstyle(1,WHITE);
+ bar(314.5,135,324.5,345);
+ setfillstyle(1,WHITE);
+ setcolor(WHITE);
+ circle(30,40,20);
+ circle(50,30,20);
+ floodfill(30,40,WHITE);
+ floodfill(60,30,WHITE);
+ floodfill(40,40,WHITE);
+ circle(70,40,20);
+ floodfill(69,40,WHITE);
+ circle(50,50,20);
+ floodfill(50,50,WHITE);
+ circle(60,40,20);
+ circle(80,30,20);
+ floodfill(60,40,WHITE);
+ floodfill(90,30,WHITE);
+ floodfill(70,40,WHITE);
+ circle(100,40,20);
+ floodfill(99,40,WHITE);
+ circle(80,50,20);
+ floodfill(90,60,WHITE);
+ setcolor(WHITE);
+ circle(190,40,20);
+ circle(210,30,20);
+ floodfill(190,40,WHITE);
+ floodfill(220,30,WHITE);
+ floodfill(200,40,WHITE);
+ circle(230,40,20);
+ floodfill(229,40,WHITE);
+ circle(210,50,20);
+ floodfill(210,50,WHITE);
+ circle(220,40,20);
+ circle(240,30,20);
+ floodfill(220,40,WHITE);
+ floodfill(250,30,WHITE);
+ floodfill(230,40,WHITE);
+ circle(260,40,20);
+ floodfill(259,40,WHITE);
+ circle(240,50,20);
+ floodfill(250,60,WHITE);
+ circle(470,60,40);
+ setfillstyle(1,YELLOW);
+ floodfill(470,60,WHITE);
+ setcolor(RED);
+ circle(470,60,41);
+ setfillstyle(1,8);
+ if(kbhit())
+ {
+  ch=getch();
+ if(ch=='a'|| ch==0x4b )
+ {
+ sound(1000);
+ delay(100);
+ nosound();
+  a1=a1-165;
+  a2=a2-165;
+  a3=a3-165;
+  a4=a4-165;
+  a5=a5-165;
+  a6=a6-165;
+  a7=a7-165;
+  a8=a8-165;
+  a9=a9-165;
+  a10=a10-165;
+  a11=a11-165;
+  a13=a13-165;
+  a15=a15-165;
+  a17=a17-165;
+  a18=a18-165;
+  a19=a19-165;
+  a20=a20-165;
+  a21=a21-165;
+  a22=a22-165;
+  a23=a23-165;
+  a24=a24-165;
+  a25=a25-165;
+  a26=a26-165;
+  a27=a27-165;
+  a28=a28-165;
+  a29=a29-165;
+  a30=a30-165;
+  a31=a31-165;
+  a32=a32-165;
+  a33=a33-165;
+  a34=a34-165;
+  a35=a35-165;
+  a37=a37-165;
+  a39=a39-165;
+  a40=a40-165;
+  a41=a41-165;
+  a42=a42-165;
+  a43=a43-165;
+  a45=a45-165;
+ }
+ if(ch=='d'|| ch==0x4d )
+ {
+ sound(1000);
+ delay(100);
+ nosound();
+  a1=a1+165;
+  a2=a2+165;
+  a3=a3+165;
+  a4=a4+165;
+  a5=a5+165;
+  a6=a6+165;
+  a7=a7+165;
+  a8=a8+165;
+  a9=a9+165;
+  a10=a10+165;
+  a11=a11+165;
+  a13=a13+165;
+  a15=a15+165;
+  a17=a17+165;
+  a18=a18+165;
+  a19=a19+165;
+  a20=a20+165;
+  a21=a21+165;
+  a22=a22+165;
+  a23=a23+165;
+  a24=a24+165;
+  a25=a25+165;
+  a26=a26+165;
+  a27=a27+165;
+  a28=a28+165;
+  a29=a29+165;
+  a30=a30+165;
+  a31=a31+165;
+  a32=a32+165;
+  a33=a33+165;
+  a34=a34+165;
+  a35=a35+165;
+  a37=a37+165;
+  a39=a39+165;
+  a40=a40+165;
+  a41=a41+165;
+  a42=a42+165;
+  a43=a43+165;
+  a45=a45+165;
+ }
+ if(ch=='q'){
+ sound(1000);
+ delay(100);
+ nosound();
+ exit(0);  }
+ }
+ if(j>=15)
+ {
+  j=0;
+ }
+ delay(100);
+ c=c+20;
+ d=d+20;
+ e=e+20;
+ f=f+20;
+ if(d>=349)
+ {
+  c=130;
+  d=160;
+ }
+ if(f>=349 && c>=190)
+ {
+  e=130;
+  f=160;
+ }
+
+ bar(314.5,c,324.5,d);
+ bar(314.5,e,324.5,f);
+  setcolor(WHITE);
+ rectangle(a1,240,a2,280);
+ line(a3,275,a4,275);//car line
+ line(a5,240,a6,200);
+ line(a7,200,a8,200);
+ line(a9,200,a10,240);
+ circle(a11,260,10);
+ circle(a13,260,10);
+ ellipse(a15,220,0,360,45,10);
+ line(a17,200,a18,190);
+ line(a19,m,a20,m);//here
+ line(a21,190,a22,200);
+ line(a23,250,a24,250);
+ line(a25,250,a26,270);
+ line(a27,270,a28,270);
+ line(a29,270,a30,250);
+ line(a31,280,a32,300);
+ line(a33,280,a34,300);
+ arc(a35,300,180,360,12);
+ arc(a37,280,90,180,3);
+ line(a39,280,a40,300);
+ line(a41,280,a42,300);
+ arc(a43,300,180,360,12);
+ arc(a45,280,0,90,3);
+ setfillstyle(1,q);
+ floodfill(a1+4,241,WHITE);
+ setfillstyle(1,YELLOW);
+ floodfill(a11,260,WHITE);
+ floodfill(a13,260,WHITE);
+ setfillstyle(1,q);
+ floodfill(a7,201,WHITE);
+ floodfill(a17+4,198,WHITE);
+ setfillstyle(1,WHITE);
+ floodfill(a15,220,WHITE);
+ setfillstyle(1,q);
+ setfillstyle(1,WHITE);
+ floodfill(a25+4,251,WHITE);
+ setfillstyle(1,BLACK);
+ floodfill(a41+2,285,WHITE);
+ floodfill(a31+2,285,WHITE);
+ //new
+ if(random==0){
+ if(a19>=340 && m<=b2+44 && m>=b2-50)
+ {
+  setvisualpage(page);
+  cleardevice();
+  setbkcolor(9);
+  sound(2000);
+  settextstyle(4,0,5);
+  setcolor(RED);
+  outtextxy(200,150,"GAME OVER");
+  delay(3000);
+  nosound();
+  main();
+  exit(0);
+ }
+ setfillstyle(1,6);
+ b2=b2+10*i;
+ b4=b4+10*i;
+ if(x>=15)
+ {
+  x=0;
+ }
+ bar3d(b1,b2,b3+20*i,b4,4,2);
+ floodfill(b1+5,b2-1,WHITE);
+ floodfill((b3+20*i)+1,b4-2,WHITE);
+ if(b2>300 && b4>360)
+ {
+ i=0;
+ b1=340;
+ b2=100;
+ b3=380;
+ b4=120;
+ x++;
+ random=rand()%2;
+ }
+ }
+ else if(random==1)
+ {
+ if(a19<=300 && m<=b2+44 && m>=b2-50)
+ {
+  setvisualpage(page);
+  cleardevice();
+  setbkcolor(9);
+  sound(2000);
+  settextstyle(4,0,5);
+  setcolor(RED);
+  outtextxy(200,150,"GAME OVER");
+  delay(3000);
+  nosound();
+  main();
+  exit(0);
+ }
+ setfillstyle(1,6);
+ b2=b2+10*i;
+ b4=b4+10*i;
+ bar3d(b5-20*i,b2,b6,b4,4,2);
+ floodfill(b5-5,b2-1,WHITE);
+ floodfill((b6+1)+1,b4-2,WHITE);
+ if(x>=15)
+ {
+  x=0;
+ }
+ if(b2>300 && b4>360)
+ {
+ i=0;
+ b5=250;
+ b2=100;
+ b6=290;
+ b4=120;
+ x++;
+ random=rand()%2;
+ }
+ }
+ page=1-page;
+ delay(1);
+ }
+ nosound();
+ getch();
+}
+int color(int q)
+{
+ int i=0,c=50;
+ char ch;
+ for(i=0;i<=c;i++)
+ {
+ cleardevice();
+ outtextxy(30,600,"press 'x' to select");
+ setbkcolor(BLACK);
+ setcolor(WHITE);
+ settextstyle(3,0,5);
+ outtextxy(150,30,"select a car ->");
+ rectangle(250,190,380,230);
+ line(260,225,370,225);
+ line(250,190,270,150);
+ line(270,150,360,150);
+ line(360,150,380,190);
+ circle(270,210,10);
+ circle(360,210,10);
+ ellipse(315,170,0,360,45,10);
+ line(270,150,280,140);
+ line(280,140,350,140);
+ line(350,140,360,150);
+ line(295,200,335,200);
+ line(295,200,305,220);
+ line(305,220,325,220);
+ line(325,220,335,200);
+ line(246,230,246,250);
+ line(270,230,270,250);
+ arc(258,250,180,360,12);
+ arc(249,230,90,180,3);
+ line(384,230,384,250);
+ line(360,230,360,250);
+ arc(372,250,180,360,12);
+ arc(381,230,0,90,3);
+ setfillstyle(1,q);
+ floodfill(251,191,WHITE);
+ setfillstyle(1,YELLOW);
+ floodfill(271,211,WHITE);
+ floodfill(361,211,WHITE);
+ setfillstyle(1,q);
+ floodfill(271,151,WHITE);
+ setfillstyle(1,WHITE);
+ floodfill(316,171,WHITE);
+ setfillstyle(1,q);
+ floodfill(278,149,WHITE);
+ setfillstyle(1,WHITE);
+ floodfill(310,219,WHITE);
+ if(kbhit())
+ {
+  ch=getch();
+  if(ch=='d' || ch==0x4d)
+  {
+   sound('x');
+   delay(100);
+   nosound();
+   q++;
+   if(q>=15)
+   q=0;
+  }
+  if(ch=='a' || ch==0x4b)
+  {
+   sound('x');
+   delay(00);
+   nosound();
+   q--;
+   if(q<=0)
+   q=15;
+  }
+  if(ch=='x')
+  {
+    return q;
+  }
+  if(ch=='q')
+  {
+   exit(0);
+  }
+ }
+ delay(300);
+}
+return q;
+}
